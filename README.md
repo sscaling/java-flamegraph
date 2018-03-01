@@ -16,7 +16,22 @@ Running
 -------
 
 ```
-docker run --rm -v $PWD:/source sscaling/java-flamegraph [path/to/jar] [args...] > flamegraph.svg
+docker run --rm -v $PWD:/source sscaling/java-flamegraph [java arguments] > flamegraph.svg
 ```
 
+**NOTE:** Due to honest-profiler configuring the `-agent` property, this should not be specified in the java arguments
+
 The output will be an SVG file written to stdout
+
+You may find this useful to configure an alias, so this can be easily executed
+
+```
+$ alias javafg='docker run -v $PWD:/source sscaling/java-flamegraph'
+$ javafg -cp target/myproject-1.0-SNAPSHOT.jar com.sscaling.test.TestApp > results.svg
+```
+
+Notes
+-----
+
+-	Currently this uses openjdk, Java 8. If you have an application requiring a newer version of Java, this is likely to be incompatible.
+-	As per the license, software is provided as-is. This is just repackaging existing components - no original work is included in this project.
