@@ -1,9 +1,20 @@
+<p>
+    <a href="https://hub.docker.com/r/sscaling/java-flamegraph/">
+        <img src="https://img.shields.io/docker/automated/sscaling/java-flamegraph.svg" />
+    </a>
+    <a href="https://hub.docker.com/r/sscaling/java-flamegraph/">
+        <img src="https://img.shields.io/docker/build/sscaling/java-flamegraph.svg" />
+    </a>
+</p>
+
 Java Flamegraph
 ===============
 
 Docker image to package together tooling for generating [Flame graphs](http://www.brendangregg.com/flamegraphs.html) based loosely on [codecentric blog](https://blog.codecentric.de/en/2017/09/jvm-fire-using-flame-graphs-analyse-performance/)
 
 Based on the official openjdk alpine docker image for Java 8.
+
+This is available via [Docker Hub](https://hub.docker.com/r/sscaling/java-flamegraph/)
 
 Building
 --------
