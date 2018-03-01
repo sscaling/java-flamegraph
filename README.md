@@ -30,7 +30,7 @@ Running
 docker run --rm -v $PWD:/source sscaling/java-flamegraph [java arguments] > flamegraph.svg
 ```
 
-**NOTE:** Due to honest-profiler configuring the `-agent` property, this should not be specified in the java arguments
+**NOTE:** Due to honest-profiler configuring the `-agentpath` property, this should not be specified in the java arguments
 
 The output will be an SVG file written to stdout
 
@@ -45,4 +45,5 @@ Notes
 -----
 
 -	Currently this uses openjdk, Java 8. If you have an application requiring a newer version of Java, this is likely to be incompatible.
+-	Currently requires the app to be self contained and already packaged. I.e. there is no support for Maven/Gradle/Ant. This means it is not a good fit for applications such as containerized webapps that are deployed into another process. However, it does mean that this image potentially has all the profiling dependencies configured and could be used as a base image if a more complicated environment is required.
 -	As per the license, software is provided as-is. This is just repackaging existing components - no original work is included in this project.
