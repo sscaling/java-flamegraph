@@ -1,11 +1,4 @@
-<p>
-    <a href="https://hub.docker.com/r/sscaling/java-flamegraph/">
-        <img src="https://img.shields.io/docker/automated/sscaling/java-flamegraph.svg" />
-    </a>
-    <a href="https://hub.docker.com/r/sscaling/java-flamegraph/">
-        <img src="https://img.shields.io/docker/build/sscaling/java-flamegraph.svg" />
-    </a>
-</p>
+[![Build Status](https://img.shields.io/docker/build/sscaling/java-flamegraph.svg)](https://hub.docker.com/r/sscaling/java-flamegraph/)
 
 Java Flamegraph
 ===============
@@ -40,6 +33,8 @@ You may find this useful to configure an alias, so this can be easily executed
 $ alias javafg='docker run -v $PWD:/source sscaling/java-flamegraph'
 $ javafg -cp target/myproject-1.0-SNAPSHOT.jar com.sscaling.test.TestApp > results.svg
 ```
+
+You can configure the profiler interval with the `PROFILER_INTERVAL` environment variable. By default this is `7`.
 
 Notes
 -----
